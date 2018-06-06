@@ -6,8 +6,8 @@ var array = require('lodash/array');
 var object = require('lodash/fp/object');
 var at = require('lodash/at');
 var curryN = require('lodash/fp/curryN');
-
 const express = require('express');
+
 var app = express();
 app.get('/', function(req,res){
   res.render('accueil.ejs')
