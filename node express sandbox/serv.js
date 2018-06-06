@@ -22,8 +22,9 @@ app.get('/sous-sol/:numeronum/parking' ,function(req,res){
     res.render('sous-sol.ejs', {numero: req.params.numeronum})
 });
 
+
 app.get('/garage/:garagenum', function(req,res){
-    res.render('garage.ejs', { garagenumber : 
+    res.render('garage.ejs', { garagenumber :
         req.params.garagenum})
 })
 
