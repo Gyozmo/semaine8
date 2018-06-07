@@ -10,7 +10,7 @@ const express = require('express');
 var bodyParser = require('body-parser')
 
 
-let computerNumber = _.random(0, 10);;
+let computerNumber = _.random(0, 10);
 let storedRandom = computerNumber
 let countdown = 0;
 let hint = ""
@@ -27,7 +27,7 @@ app.get('/', function (req, res) {
     userNumber: "",
     storedRandom: "",
     hint: "",
-    countdown: ""
+    countdown: 0
   })
 });
 
@@ -38,14 +38,21 @@ app.post('/numberAction', function (req, res) {
  
 
   if (userNumber < storedRandom && countdown < 2) {
-    hint = "plus petit";
+    hint = "plus grand";
     countdown++
 
   } else if (userNumber > storedRandom && countdown < 2) {
-    hint = "plus grand";
+    hint = "plus petit";
     countdown++
   } else if (userNumber == storedRandom){
     hint = "bravo";
+    countdown = 0;
+    storedRandom = _.random(0, 10);
+    
+  } else {
+    countdown = 0;
+    hint = 'Perdu !';
+    storedRandom = _.random(0, 10);
     
   }
 

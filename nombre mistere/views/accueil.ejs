@@ -8,13 +8,14 @@
   <body>
     <h1>test</h1>
     <form class="" action="/numberAction" method="post">
-    Choose a number  <input type="number" name="" value="<%= userNumber %>" min="0" max="10">
+    Choose a number  <input type="number" name="userNumber" value="" min="0" max="10" autofocus>
     </form>
     <p>
-      numero de l'ordi <%= storedRandom %> <br>
-      resultat <%= hint %> <br>
-      chances <%= countdown %>
+      <!-- numero de l'ordi : <%= storedRandom %> <br> -->
+      resultat : <%= hint %> <br>
+      chances utilisées : <%= countdown %>
 
     </p>
   </body>
 </html>
+
